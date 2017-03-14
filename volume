@@ -1,0 +1,18 @@
+#!/bin/sh
+
+
+#make variable to represent speaker or headphone 
+#
+#test this variable with sed statement 
+
+vol() {
+   amixer get Speaker | sed -n 's/^.*\[\([0-9]\+%\).*$/\1/p' | uniq
+#   amixer get Headphone | sed -n 's/^.*+%).*$/1/p' | uniq
+} 
+
+state() {
+   amixer get Speaker | sed -n 's/^.*\(o[nf]\+\)]$/\1/p' | uniq
+#   amixer get Headphone | sed -n 's/^.*(o[nf]+)]$/1/p' | uniq
+}
+
+echo "`vol` `state`" && exit 0
