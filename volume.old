@@ -12,13 +12,5 @@ vol() {
 state() {
    amixer get Speaker | sed -n 's/^.*\(o[nf]\+\)]$/\1/p' | uniq
 }
-stateTest() {
-   if [ `state` = "on" ]; then
-      echo "speaker"
-   else 
-      echo "headphones"
-   fi
-}
 
-
-echo "`vol` `stateTest`" && exit 0
+echo "`vol` `state`" && exit 0

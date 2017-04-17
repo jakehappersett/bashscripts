@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 
 #make variable to represent speaker or headphone 
@@ -6,10 +6,12 @@
 #test this variable with sed statement 
 
 test= amixer get Speaker | sed -n 's/^.*\[\([0-9]\+%\).*$/\1/p' | uniq 
-input="Speaker"
 
-if [$test == "on"];
+input="Speaker"
+on ="on"
+
+if [ $test == $on ];
 then 
-	input="it worked"
+	input="speaker"
 	echo "$input"
 fi

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+bar_bg='#BA55D3'
+
+(echo " $@"; sleep 3) | lemonbar -d -g 100x30+1200+40 -B#BA55D3 

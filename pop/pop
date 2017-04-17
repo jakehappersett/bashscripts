@@ -1,3 +1,0 @@
-#!/bin/sh
-
-(echo " $@"; sleep 3) | lemonbar -d -g 120x20+1200+40

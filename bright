@@ -1,0 +1,10 @@
+#!/bin/bash
+
+max_bright=$(/usr/bin/cat /sys/class/backlight/backlight.12/max_brightness)
+
+cur_bright=$(/usr/bin/cat /sys/class/backlight/backlight.12/actual_brightness)
+
+per_bright=$(($cur_bright/$max_bright*100))
+
+printf  "%.0f" "$(bc <<< "scale=10; (($cur_bright/$max_bright)*100)")"
+echo "%"
